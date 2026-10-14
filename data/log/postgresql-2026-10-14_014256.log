@@ -1,0 +1,175 @@
+2026-10-14 01:42:56 +09 СООБЩЕНИЕ:  система БД была выключена: 2026-10-14 01:42:46 +09
+2026-10-14 01:47:56 +09 СООБЩЕНИЕ:  начата контрольная точка: time
+2026-10-14 01:49:49 +09 СООБЩЕНИЕ:  контрольная точка завершена: записано буферов: 1034 (6.3%), записано SLRU-буферов: 3; добавлено файлов WAL 1, удалено: 0, переработано: 0; запись=112.756 сек., синхр.=0.124 сек., всего=113.163 сек.; синхронизировано_файлов=313, самая_долгая_синхр.=0.002 сек., средняя=0.001 сек.; расстояние=4992 КБ, ожидалось=4992 КБ; lsn=0/1CC8D40, lsn redo=0/1CC8CB0
+2026-10-14 01:52:56 +09 СООБЩЕНИЕ:  начата контрольная точка: time
+2026-10-14 01:52:59 +09 СООБЩЕНИЕ:  контрольная точка завершена: записано буферов: 22 (0.1%), записано SLRU-буферов: 1; добавлено файлов WAL 0, удалено: 0, переработано: 0; запись=2.406 сек., синхр.=0.015 сек., всего=2.427 сек.; синхронизировано_файлов=20, самая_долгая_синхр.=0.003 сек., средняя=0.001 сек.; расстояние=130 КБ, ожидалось=4506 КБ; lsn=0/1CE9860, lsn redo=0/1CE9808
+2026-10-14 02:27:56 +09 СООБЩЕНИЕ:  начата контрольная точка: time
+2026-10-14 02:27:56 +09 СООБЩЕНИЕ:  контрольная точка завершена: записано буферов: 1 (0.0%), записано SLRU-буферов: 0; добавлено файлов WAL 0, удалено: 0, переработано: 0; запись=0.117 сек., синхр.=0.001 сек., всего=0.130 сек.; синхронизировано_файлов=1, самая_долгая_синхр.=0.001 сек., средняя=0.001 сек.; расстояние=6 КБ, ожидалось=4056 КБ; lsn=0/1CEB3E8, lsn redo=0/1CEB390
+2026-10-14 02:38:51 +09 LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-10-14 02:38:51 +09 LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-10-14 03:37:56 +09 СООБЩЕНИЕ:  начата контрольная точка: time
+2026-10-14 03:37:56 +09 СООБЩЕНИЕ:  контрольная точка завершена: записано буферов: 1 (0.0%), записано SLRU-буферов: 0; добавлено файлов WAL 0, удалено: 0, переработано: 0; запись=0.109 сек., синхр.=0.001 сек., всего=0.129 сек.; синхронизировано_файлов=1, самая_долгая_синхр.=0.001 сек., средняя=0.001 сек.; расстояние=6 КБ, ожидалось=3651 КБ; lsn=0/1CECF70, lsn redo=0/1CECF18
+2026-10-14 03:41:15 +09 РћРЁРР‘РљРђ:  syntax error at or near "CREATE" (СЃРёРјРІРѕР» 28)
+2026-10-14 03:41:15 +09 РћРџР•Р РђРўРћР :  SELECT * FROM public.users
+	CREATE TYPE user_role AS ENUM ('participant', 'mentor', 'expert', 'admin', 'partner')
+	
+	CREATE TABLE users (
+		id SERIAL PRIMARY KEY,
+		email VARCHER(255) UNIQUE NOT NULL,
+		password_hash VARCHAR(255), 
+		role user_role NOT NULL DEFAULT 'participant',
+		vk_id VARCHAR(100) UNIQUE,
+		created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+		updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+	)
+2026-10-14 03:41:35 +09 РћРЁРР‘РљРђ:  С‚РёРї "varcher" РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚ (СЃРёРјРІРѕР» 53)
+2026-10-14 03:41:35 +09 РћРџР•Р РђРўРћР :  Create TABLE users (
+		id SERIAL PRIMARY KEY,
+		email VARCHER(255) UNIQUE NOT NULL,
+		password_hash VARCHAR(255), 
+		role user_role NOT NULL DEFAULT 'participant',
+		vk_id VARCHAR(100) UNIQUE,
+		created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+		updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+	)
+2026-10-14 03:42:20 +09 РћРЁРР‘РљРђ:  РѕС€РёР±РєР° СЃРёРЅС‚Р°РєСЃРёСЃР° (РїСЂРёРјРµСЂРЅРѕРµ РїРѕР»РѕР¶РµРЅРёРµ: "Create") (СЃРёРјРІРѕР» 28)
+2026-10-14 03:42:20 +09 РћРџР•Р РђРўРћР :  SELECT * FROM public.users
+	Create TYPE user_role AS ENUM ('participant', 'mentor', 'expert', 'admin', 'partner')
+	
+	Create TABLE users (
+		id SERIAL PRIMARY KEY,
+		email VARCHAR(255) UNIQUE NOT NULL,
+		password_hash VARCHAR(255), 
+		role user_role NOT NULL DEFAULT 'participant',
+		vk_id VARCHAR(100) UNIQUE,
+		created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+		updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+	)
+2026-10-14 03:42:44 +09 РћРЁРР‘РљРђ:  РѕС€РёР±РєР° СЃРёРЅС‚Р°РєСЃРёСЃР° (РїСЂРёРјРµСЂРЅРѕРµ РїРѕР»РѕР¶РµРЅРёРµ: "CREATE") (СЃРёРјРІРѕР» 28)
+2026-10-14 03:42:44 +09 РћРџР•Р РђРўРћР :  SELECT * FROM public.users
+	CREATE TYPE user_role AS ENUM ('participant', 'mentor', 'expert', 'admin', 'partner')
+	
+	CREATE TABLE users (
+		id SERIAL PRIMARY KEY,
+		email VARCHAR(255) UNIQUE NOT NULL,
+		password_hash VARCHAR(255), 
+		role user_role NOT NULL DEFAULT 'participant',
+		vk_id VARCHAR(100) UNIQUE,
+		created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+		updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+	)
+2026-10-14 03:43:16 +09 РћРЁРР‘РљРђ:  РѕС€РёР±РєР° СЃРёРЅС‚Р°РєСЃРёСЃР° (РїСЂРёРјРµСЂРЅРѕРµ РїРѕР»РѕР¶РµРЅРёРµ: "CREATE") (СЃРёРјРІРѕР» 88)
+2026-10-14 03:43:16 +09 РћРџР•Р РђРўРћР :  CREATE TYPE user_role AS ENUM ('participant', 'mentor', 'expert', 'admin', 'partner')
+	
+	CREATE TABLE users (
+		id SERIAL PRIMARY KEY,
+		email VARCHAR(255) UNIQUE NOT NULL,
+		password_hash VARCHAR(255), 
+		role user_role NOT NULL DEFAULT 'participant',
+		vk_id VARCHAR(100) UNIQUE,
+		created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+		updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+	)
+2026-10-14 03:43:18 +09 РћРЁРР‘РљРђ:  РѕС€РёР±РєР° СЃРёРЅС‚Р°РєСЃРёСЃР° (РїСЂРёРјРµСЂРЅРѕРµ РїРѕР»РѕР¶РµРЅРёРµ: "CREATE") (СЃРёРјРІРѕР» 88)
+2026-10-14 03:43:18 +09 РћРџР•Р РђРўРћР :  CREATE TYPE user_role AS ENUM ('participant', 'mentor', 'expert', 'admin', 'partner')
+	
+	CREATE TABLE users (
+		id SERIAL PRIMARY KEY,
+		email VARCHAR(255) UNIQUE NOT NULL,
+		password_hash VARCHAR(255), 
+		role user_role NOT NULL DEFAULT 'participant',
+		vk_id VARCHAR(100) UNIQUE,
+		created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+		updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+	)
+2026-10-14 03:43:51 +09 РћРЁРР‘РљРђ:  РѕС‚РЅРѕС€РµРЅРёРµ "users" СѓР¶Рµ СЃСѓС‰РµСЃС‚РІСѓРµС‚
+2026-10-14 03:43:51 +09 РћРџР•Р РђРўРћР :  CREATE TYPE user_role AS ENUM ('participant', 'mentor', 'expert', 'admin', 'partner');
+	
+	CREATE TABLE users (
+		id SERIAL PRIMARY KEY,
+		email VARCHAR(255) UNIQUE NOT NULL,
+		password_hash VARCHAR(255), 
+		role user_role NOT NULL DEFAULT 'participant',
+		vk_id VARCHAR(100) UNIQUE,
+		created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+		updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+	)
+2026-10-14 03:47:56 +09 СООБЩЕНИЕ:  начата контрольная точка: time
+2026-10-14 03:48:03 +09 СООБЩЕНИЕ:  контрольная точка завершена: записано буферов: 59 (0.4%), записано SLRU-буферов: 1; добавлено файлов WAL 0, удалено: 0, переработано: 0; запись=6.446 сек., синхр.=0.032 сек., всего=6.487 сек.; синхронизировано_файлов=48, самая_долгая_синхр.=0.004 сек., средняя=0.001 сек.; расстояние=279 КБ, ожидалось=3314 КБ; lsn=0/1D32CC8, lsn redo=0/1D32C38
+2026-10-14 03:52:56 +09 СООБЩЕНИЕ:  начата контрольная точка: time
+2026-10-14 03:53:01 +09 СООБЩЕНИЕ:  контрольная точка завершена: записано буферов: 50 (0.3%), записано SLRU-буферов: 1; добавлено файлов WAL 0, удалено: 0, переработано: 0; запись=5.515 сек., синхр.=0.023 сек., всего=5.547 сек.; синхронизировано_файлов=41, самая_долгая_синхр.=0.003 сек., средняя=0.001 сек.; расстояние=233 КБ, ожидалось=3006 КБ; lsn=0/1D6D438, lsn redo=0/1D6D3E0
+2026-10-14 04:00:30 +09 РћРЁРР‘РљРђ:  РѕС‚РЅРѕС€РµРЅРёРµ "projects" РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚
+2026-10-14 04:00:30 +09 РћРџР•Р РђРўРћР :  -- Р‘С‹СЃС‚СЂС‹Р№ РїРѕРёСЃРє РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ РїРѕ СЂРѕР»Рё Рё СЂРµРіРёРѕРЅСѓ
+	CREATE INDEX idx_users_role ON users(role);
+	CREATE INDEX idx_profiles_region ON participant_profiles(region);
+	
+	-- РЈСЃРєРѕСЂРµРЅРёРµ РїСЂРѕРІРµСЂРєРё СЃС‚Р°С‚СѓСЃРѕРІ С‚РµСЃС‚РѕРІ Рё РїСЂРѕРµРєС‚РѕРІ
+	CREATE INDEX idx_participant_tests_user ON participant_tests(participant_id);
+	CREATE INDEX idx_projects_status ON projects(status);
+	CREATE INDEX idx_projects_nomination ON projects(nomination);
+	
+	-- РРЅРґРµРєСЃ РґР»СЏ СЂР°СЃРїСЂРµРґРµР»РµРЅРёСЏ РїСЂРѕРµРєС‚РѕРІ СЌРєСЃРїРµСЂС‚Р°Рј
+	CREATE INDEX idx_expert_evaluations_expert ON expert_evaluations(expert_id);
+2026-10-14 04:02:56 +09 СООБЩЕНИЕ:  начата контрольная точка: time
+2026-10-14 04:03:04 +09 СООБЩЕНИЕ:  контрольная точка завершена: записано буферов: 72 (0.4%), записано SLRU-буферов: 1; добавлено файлов WAL 0, удалено: 0, переработано: 0; запись=7.860 сек., синхр.=0.038 сек., всего=7.904 сек.; синхронизировано_файлов=65, самая_долгая_синхр.=0.002 сек., средняя=0.001 сек.; расстояние=423 КБ, ожидалось=2748 КБ; lsn=0/1DD7168, lsn redo=0/1DD70D8
+2026-10-14 04:05:37 +09 РЎРћРћР‘Р©Р•РќРР•:  РЅРµ СѓРґР°Р»РѕСЃСЊ РїРѕР»СѓС‡РёС‚СЊ РґР°РЅРЅС‹Рµ РѕС‚ РєР»РёРµРЅС‚Р°: An existing connection was forcibly closed by the remote host.
+	
+2026-10-14 04:05:37 +09 РЎРћРћР‘Р©Р•РќРР•:  РЅРµ СѓРґР°Р»РѕСЃСЊ РїРѕР»СѓС‡РёС‚СЊ РґР°РЅРЅС‹Рµ РѕС‚ РєР»РёРµРЅС‚Р°: An existing connection was forcibly closed by the remote host.
+	
+2026-10-14 04:05:37 +09 LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-10-14 04:05:37 +09 РЎРћРћР‘Р©Р•РќРР•:  РЅРµ СѓРґР°Р»РѕСЃСЊ РїРѕР»СѓС‡РёС‚СЊ РґР°РЅРЅС‹Рµ РѕС‚ РєР»РёРµРЅС‚Р°: An existing connection was forcibly closed by the remote host.
+	
+2026-10-14 04:12:01 +09 РћРЁРР‘РљРђ:  relation "projects" does not exist
+2026-10-14 04:12:01 +09 РћРџР•Р РђРўРћР :  CREATE INDEX idx_users_role ON users(role);
+	CREATE INDEX idx_profiles_region ON participant_profiles(region);
+	
+	-- РЈСЃРєРѕСЂРµРЅРёРµ РїСЂРѕРІРµСЂРєРё СЃС‚Р°С‚СѓСЃРѕРІ С‚РµСЃС‚РѕРІ Рё РїСЂРѕРµРєС‚РѕРІ
+	CREATE INDEX idx_participant_tests_user ON participant_tests(participant_id);
+	CREATE INDEX idx_projects_status ON projects(status);
+	CREATE INDEX idx_projects_nomination ON projects(nomination);
+	
+	-- РРЅРґРµРєСЃ РґР»СЏ СЂР°СЃРїСЂРµРґРµР»РµРЅРёСЏ РїСЂРѕРµРєС‚РѕРІ СЌРєСЃРїРµСЂС‚Р°Рј
+	CREATE INDEX idx_expert_evaluations_expert ON expert_evaluations(expert_id);
+2026-10-14 04:12:56 +09 СООБЩЕНИЕ:  начата контрольная точка: time
+2026-10-14 04:12:58 +09 СООБЩЕНИЕ:  контрольная точка завершена: записано буферов: 16 (0.1%), записано SLRU-буферов: 1; добавлено файлов WAL 0, удалено: 0, переработано: 0; запись=1.756 сек., синхр.=0.011 сек., всего=1.779 сек.; синхронизировано_файлов=19, самая_долгая_синхр.=0.002 сек., средняя=0.001 сек.; расстояние=93 КБ, ожидалось=2482 КБ; lsn=0/1DEE7B0, lsn redo=0/1DEE758
+2026-10-14 04:15:00 +09 РћРЁРР‘РљРђ:  РѕС‚РЅРѕС€РµРЅРёРµ "expert_evaluations" РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚
+2026-10-14 04:15:00 +09 РћРџР•Р РђРўРћР :  -- Р‘С‹СЃС‚СЂС‹Р№ РїРѕРёСЃРє РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ РїРѕ СЂРѕР»Рё Рё СЂРµРіРёРѕРЅСѓ
+	CREATE INDEX idx_users_role ON users(role);
+	CREATE INDEX idx_profiles_region ON participant_profiles(region);
+	
+	-- РЈСЃРєРѕСЂРµРЅРёРµ РїСЂРѕРІРµСЂРєРё СЃС‚Р°С‚СѓСЃРѕРІ С‚РµСЃС‚РѕРІ Рё РїСЂРѕРµРєС‚РѕРІ
+	CREATE INDEX idx_participant_tests_user ON participant_tests(participant_id);
+	CREATE INDEX idx_projects_status ON projects(status);
+	CREATE INDEX idx_projects_nomination ON projects(nomination);
+	
+	-- РРЅРґРµРєСЃ РґР»СЏ СЂР°СЃРїСЂРµРґРµР»РµРЅРёСЏ РїСЂРѕРµРєС‚РѕРІ СЌРєСЃРїРµСЂС‚Р°Рј
+	CREATE INDEX idx_expert_evaluations_expert ON expert_evaluations(expert_id);
+2026-10-14 04:15:19 +09 РЎРћРћР‘Р©Р•РќРР•:  РЅРµ СѓРґР°Р»РѕСЃСЊ РїРѕР»СѓС‡РёС‚СЊ РґР°РЅРЅС‹Рµ РѕС‚ РєР»РёРµРЅС‚Р°: An existing connection was forcibly closed by the remote host.
+	
+2026-10-14 04:15:41 +09 РћРЁРР‘РљРђ:  РѕС‚РЅРѕС€РµРЅРёРµ "idx_users_role" СѓР¶Рµ СЃСѓС‰РµСЃС‚РІСѓРµС‚
+2026-10-14 04:15:41 +09 РћРџР•Р РђРўРћР :  -- Р‘С‹СЃС‚СЂС‹Р№ РїРѕРёСЃРє РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ РїРѕ СЂРѕР»Рё Рё СЂРµРіРёРѕРЅСѓ
+	CREATE INDEX idx_users_role ON users(role);
+	CREATE INDEX idx_profiles_region ON participant_profiles(region);
+	
+	-- РЈСЃРєРѕСЂРµРЅРёРµ РїСЂРѕРІРµСЂРєРё СЃС‚Р°С‚СѓСЃРѕРІ С‚РµСЃС‚РѕРІ Рё РїСЂРѕРµРєС‚РѕРІ
+	CREATE INDEX idx_participant_tests_user ON participant_tests(participant_id);
+	CREATE INDEX idx_projects_status ON projects(status);
+	CREATE INDEX idx_projects_nomination ON projects(nomination);
+	
+	-- РРЅРґРµРєСЃ РґР»СЏ СЂР°СЃРїСЂРµРґРµР»РµРЅРёСЏ РїСЂРѕРµРєС‚РѕРІ СЌРєСЃРїРµСЂС‚Р°Рј
+	CREATE INDEX idx_expert_evaluations_expert ON expert_evaluations(expert_id);
+2026-10-14 04:16:37 +09 LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-10-14 04:16:37 +09 LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-10-14 04:16:37 +09 LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-10-14 04:16:37 +09 РЎРћРћР‘Р©Р•РќРР•:  РЅРµ СѓРґР°Р»РѕСЃСЊ РїРѕР»СѓС‡РёС‚СЊ РґР°РЅРЅС‹Рµ РѕС‚ РєР»РёРµРЅС‚Р°: An existing connection was forcibly closed by the remote host.
+	
+2026-10-14 04:17:09 +09 СООБЩЕНИЕ:  выключение
+2026-10-14 04:17:09 +09 ОШИБКА:  выполнение оператора отменено по запросу пользователя
+2026-10-14 04:17:09 +09 СООБЩЕНИЕ:  начата контрольная точка: shutdown immediate
+2026-10-14 04:17:09 +09 СООБЩЕНИЕ:  контрольная точка завершена: записано буферов: 65 (0.4%), записано SLRU-буферов: 1; добавлено файлов WAL 0, удалено: 0, переработано: 0; запись=0.024 сек., синхр.=0.366 сек., всего=0.406 сек.; синхронизировано_файлов=64, самая_долгая_синхр.=0.032 сек., средняя=0.006 сек.; расстояние=358 КБ, ожидалось=2270 КБ; lsn=0/1E48318, lsn redo=0/1E48318

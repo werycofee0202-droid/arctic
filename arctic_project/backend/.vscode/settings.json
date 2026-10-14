@@ -1,0 +1,16 @@
+{
+    "sqltools.connections": [
+        {
+            "ssh": "Disabled",
+            "previewLimit": "50",
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "database": "db",
+            "username": "postgres",
+            "name": "arctic",
+            "connectionTimeout": 30
+        }
+    ],
+    "python.defaultInterpreterPath": "./venv/Scripts/python.exe"
+}
