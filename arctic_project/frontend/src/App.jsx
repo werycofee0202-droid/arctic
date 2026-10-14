@@ -9,7 +9,6 @@ import Experts from "./components/Experts";
 import Dashboard from "./components/Dashboard";
 import "./App.css";
 
-/* ================== ГЛАВНАЯ ================== */
 function Home() {
   useEffect(() => {
     const el = document.getElementById("participantsCounter");
@@ -80,7 +79,6 @@ function Home() {
   );
 }
 
-/* ================== КОРЕНЬ ================== */
 export default function App() {
   return (
     <>
@@ -167,7 +165,7 @@ export default function App() {
             <div>
               <h4>Контакты</h4>
               <a href="mailto:org@arctic-contest.ru">org@arctic-contest.ru</a>
-              <a href="tel:+70000000000">+7 (000) 000-00-00</a>
+              <a href="tel:+79248770200">+7 (924) 877-02-00</a>
               <div className="socials" style={{ marginTop: 12 }}>
                 <a href="#" aria-label="ВКонтакте">VK</a>
                 <a href="#" aria-label="Telegram">TG</a>
